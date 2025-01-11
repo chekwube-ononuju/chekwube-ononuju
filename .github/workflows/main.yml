@@ -1,0 +1,44 @@
+name: Generate Snake Animation
+
+on:
+  push:
+    branches:
+      - output  # Creates a new output branch
+  schedule:
+    - cron: "0 0 * * *"  # Runs daily at midnight (UTC)
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the Repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Step 2: Setup Node.js Environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+
+      # Step 3: Generate Snake Animation
+      - name: Generate Snake Animation
+        uses: Platane/snk@v3
+        with:
+          github_user_name: chekwube-ononuju  # Replace with your GitHub username
+          outputs: dist/snake.svg
+
+      # Step 4: Commit the Generated Snake File
+      - name: Commit Changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: dist/snake.svg
+          message: "Generated snake animation [skip ci]"
+
+      # Step 5: Push Changes to the Output Branch
+      - name: Push to Output Branch
+        uses: ad-m/github-push-action@v1
+        with:
+          branch: output
+          github_token: ${{ secrets.GITHUB_TOKEN }}
