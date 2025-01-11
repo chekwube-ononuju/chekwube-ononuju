@@ -126,3 +126,9 @@
 </div>
 
 ###
+<div align="left">
+  <img 
+    src="https://raw.githubusercontent.com/chekwube-ononuju/chekwube-ononuju/output/snake.svg" 
+    alt="Snake animation" 
+  />
+</div>
