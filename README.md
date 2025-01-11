@@ -33,7 +33,7 @@
 
 <div align="left">
   <!-- Gmail Badge -->
-  <a href="mailto:chekwube.s.ononuju@gmail.com" target="_blank" rel="noopener noreferrer">
+ <a href="mailto:chekwube.s.ononuju@gmail.com" target="_blank" rel="noopener noreferrer" title="Send an email to Chekwube">
     <img 
       src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" 
       height="35" 
